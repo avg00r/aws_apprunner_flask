@@ -2,11 +2,13 @@ from flask import Flask, render_template
 import os
 
 application = Flask(__name__,  template_folder='/templates')
+app.debug = True
+app.run()
 
 
-@application.route("/")
+@application.route('/')
 def root():
-    return render_template("index.html")
+    return render_template('index.html')
 
 @application.route("/help")
 def helppage():
